@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.c7.layout.MainActivity">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:stretchColumns="1"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TableRow>
+            <TextView
+                android:padding="3dip"
+                android:text=" Open..."
+                android:textColor="@color/white" />
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="Ctr-O"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:padding="3dip"
+                android:text=" Save..."
+                android:textColor="@color/white" />
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="Ctr-S"
+                android:textColor="@color/white" />
+        </TableRow>
+        <TableRow android:background="@drawable/bottom_border">
+            <TextView
+                android:padding="3dip"
+                android:text=" Save As..."
+                android:textColor="@color/white" />
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="Ctr-Shift-S"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:padding="3dip"
+                android:text="×Import..."
+                android:textColor="@color/white" />
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text=""
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow android:background="@drawable/bottom_border">
+            <TextView
+                android:padding="3dip"
+                android:text="×Export..."
+                android:textColor="@color/white" />
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="Ctr-E"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:padding="3dip"
+                android:text=" Quit"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:gravity="right"
+                android:padding="3dip"
+                android:text=""
+                android:textColor="@color/white" />
+        </TableRow>
+    </TableLayout>
+</android.support.constraint.ConstraintLayout>
