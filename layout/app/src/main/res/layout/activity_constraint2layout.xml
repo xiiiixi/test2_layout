@@ -7,18 +7,24 @@
     tools:context="com.example.c7.layout.MainActivity">
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@color/black"
         android:stretchColumns="1"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow>
+
             <TextView
                 android:padding="3dip"
                 android:text=" Open..."
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                tools:text=" Open..." />
+
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
@@ -27,21 +33,26 @@
         </TableRow>
 
         <TableRow>
+
             <TextView
                 android:padding="3dip"
                 android:text=" Save..."
                 android:textColor="@color/white" />
+
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
                 android:text="Ctr-S"
                 android:textColor="@color/white" />
         </TableRow>
+
         <TableRow android:background="@drawable/bottom_border">
+
             <TextView
                 android:padding="3dip"
                 android:text=" Save As..."
                 android:textColor="@color/white" />
+
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
@@ -50,10 +61,12 @@
         </TableRow>
 
         <TableRow>
+
             <TextView
                 android:padding="3dip"
                 android:text="×Import..."
                 android:textColor="@color/white" />
+
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
@@ -62,10 +75,12 @@
         </TableRow>
 
         <TableRow android:background="@drawable/bottom_border">
+
             <TextView
                 android:padding="3dip"
                 android:text="×Export..."
                 android:textColor="@color/white" />
+
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
@@ -74,9 +89,10 @@
         </TableRow>
 
         <TableRow>
+
             <TextView
                 android:padding="3dip"
-                android:text=" Quit"
+                android:text="Quit"
                 android:textColor="@color/white" />
 
             <TextView
@@ -85,5 +101,6 @@
                 android:text=""
                 android:textColor="@color/white" />
         </TableRow>
+
     </TableLayout>
 </android.support.constraint.ConstraintLayout>

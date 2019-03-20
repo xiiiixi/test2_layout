@@ -25,13 +25,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="RelativeLayout" />
+            android:text="ConstraintLayout1" />
         <Button
             android:id="@+id/constraint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="ConstraintLayout" />
+            android:text="ConstraintLayout2" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

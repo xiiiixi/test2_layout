@@ -21,13 +21,14 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".RelativeLayout">
+        <activity android:name=".Constr1Layout"
+                    android:configChanges="orientation|keyboardHidden">
             <intent-filter>
                 <action android:name="com.example.c7.layout.RelativeLayout" />
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ConstraintLayout">
+        <activity android:name=".Constraint2Layout">
             <intent-filter>
                 <action android:name="com.example.c7.layout.ConstraintLayout" />
                 <category android:name="android.intent.category.DEFAULT"/>

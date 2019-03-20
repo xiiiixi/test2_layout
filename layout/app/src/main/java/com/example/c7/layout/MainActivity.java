@@ -42,11 +42,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(a);
                 break;
               case R.id.relative:
-                  b=new Intent(MainActivity.this,RelativeLayout.class);
+                  b=new Intent(MainActivity.this,Constr1Layout.class);
                   startActivity(b);
                   break;
               case R.id.constraint:
-                  c=new Intent(MainActivity.this,ConstraintLayout.class);
+                  c=new Intent(MainActivity.this,Constraint2Layout.class);
                   startActivity(c);
                   break;
                   default:
