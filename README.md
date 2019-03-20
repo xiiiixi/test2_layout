@@ -1,5 +1,5 @@
 # test2_layout
-这是关于线性布局、相对布局、表格布局的实验
+这是关于线性布局、约束布局、表格布局的实验
 # 实验二
 学号：123012016072 
 姓名：陈琪
@@ -83,23 +83,26 @@ public class LinearLayout extends AppCompatActivity {
     }
 }
 ```
-**3、RelativeLayout.java:**
+**3、Constr1Layout.java:**
 ```
 package com.example.c7.layout;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-/**
- * Created by c7 on 2019/3/14.
- */
-public class RelativeLayout extends AppCompatActivity {
+public class Constr1Layout extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relativelayout);
+        setContentView(R.layout.activity_constr1layout);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration config) {
+        super.onConfigurationChanged(config);//横竖屏切换，布局调整合适
+        setContentView(R.layout.activity_constr1layout);
     }
 }
 ```
-**4、ConstraintLayout .java:**
+**4、Constraint2Layout .java:**
 ```
 package com.example.c7.layout;
 import android.support.v7.app.AppCompatActivity;
@@ -332,77 +335,92 @@ public class ConstraintLayout extends AppCompatActivity{
     </LinearLayout>
 </LinearLayout>
 ```
-**9、Activity_relativelayout.xml:**
+**9、Activity_constr1layout.xml:**
 ```
- <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+ <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
-        >
-        <TextView
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+        
+        <Button
+            android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="RED"
-            android:layout_alignParentTop="true"
-            android:textColor="@color/black"
-            android:background="@color/red" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="ORANGE"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/black"
-            android:background="@color/orange"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="YELLOW"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:textColor="@color/black"
-            android:background="@color/yellow"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="GREEN"
-            android:layout_toLeftOf="@+id/blue"
-            android:layout_centerInParent="true"
-            android:textColor="@color/black"
-            android:background="@color/green"/>
-        <TextView
-            android:id="@+id/blue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="BLUE"
-            android:layout_centerInParent="true"
-            android:textColor="@color/white"
-            android:background="@color/blue"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="INDIGO"
-            android:layout_toRightOf="@+id/blue"
-            android:layout_centerInParent="true"
-            android:textColor="@color/white"
-            android:background="@color/indigo"/>
+            android:background="@color/red"
+            android:text="Button"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:text="red" />
 
-        <TextView
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_alignParentBottom="true"
-            android:background="@color/violet"
-            android:text="VIOLET"
-            android:textColor="@color/black" />
-    </RelativeLayout>
+            android:background="@color/orange"
+            android:text="Button"
+            tools:layout_editor_absoluteX="252dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:text="ORANGE" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+            android:text="Button"
+            tools:layout_editor_absoluteX="503dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:text="YELLOW" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="96dp"
+            android:layout_height="48dp"
+            android:background="@color/indigo"
+            android:text="Button"
+            tools:layout_editor_absoluteX="355dp"
+            tools:layout_editor_absoluteY="120dp"
+            tools:text="INDIGO" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="96dp"
+            android:layout_height="48dp"
+            android:background="@color/green"
+            android:text="Button"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="120dp"
+            tools:text="GREEN" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="96dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blue"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="@+id/button7"
+            app:layout_constraintStart_toEndOf="@+id/button5"
+            app:layout_constraintTop_toTopOf="@+id/button2"
+            app:layout_constraintVertical_bias="0.459"
+            tools:text="BLUE" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="583dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="@color/violet"
+            android:text="Button"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="260dp"
+            tools:text="VIOLET" />
+    </android.support.constraint.ConstraintLayout>
 ```
 **10、Activity_constraintlayout.xml:**
 ```
@@ -487,17 +505,60 @@ public class ConstraintLayout extends AppCompatActivity{
         </TableRow>
     </TableLayout>
 ```
-### (2)结果截图：
-**1、主界面（主活动）：按下按钮跳转相应布局：**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190319101616162.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
+**11、AndroidMenifest.xml:**
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.c7.layout">
 
-**2、跳转线性布局：**
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LinearLayout">
+            <intent-filter>
+                <action android:name="com.example.c7.layout.LinearLayout" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Constr1Layout"
+                    android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="com.example.c7.layout.RelativeLayout" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Constraint2Layout">
+            <intent-filter>
+                <action android:name="com.example.c7.layout.ConstraintLayout" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
+
+### (2)结果截图：
+**1、主界面（主活动）：按下按钮跳转相应布局：**\
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190320133806321.jpg)
+
+**2、跳转线性布局：**\
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190319101627726.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 
-**3、跳转相对布局：**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190319101636960.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
+**3、跳转约束布局：**\
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190320133123747.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 
-**4、跳转表格布局：**
+**4、跳转表格布局：**\
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190319101644905.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpdmljNw==,size_16,color_FFFFFF,t_70)
 
 ## 三、总结
